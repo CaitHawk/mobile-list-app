@@ -27,13 +27,17 @@ function ToDoApp() {
             }}
             elevation={0}
         >
-            <AppBar color='primary' position='static' style={{ height: "64px" }}>
+            <AppBar color='error' position='static' style={{ height: "64px" }}>
                 <Toolbar>
                     <Typography color='inherit'>To Dos with hooks</Typography>
                 </Toolbar>
             </AppBar>
-            <ToDoForm addTodo={addTodo} />
-            <ToDoList todos={todos} />
+            <Grid container justifyContent="center" style={{ marginTop: "1rem"}}>
+                <Grid item xs={11} md={8} lg={4}>
+                    <ToDoForm addTodo={addTodo} />
+                    <ToDoList todos={todos} />
+                </Grid>
+            </Grid>
         </Paper>
     );
 };

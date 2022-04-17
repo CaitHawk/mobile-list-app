@@ -1,9 +1,9 @@
 import React from 'react';
+import Todo from './Todo';
 import Paper from '@mui/material/Paper';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
+
 
 function ToDoList(props) {
     return (
@@ -11,9 +11,7 @@ function ToDoList(props) {
             <List>
                 {props.todos.map(todo => (
                     <>
-                        <ListItem>
-                            <ListItemText>{todo.task}</ListItemText>
-                        </ListItem>
+                        <Todo task={todo.task} key={todo.id} completed={todo.completed} />
                         <Divider />
                     </>
                 ))}
