@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import ToDoList from './ToDoList';
 import ToDoForm from './ToDoForm';
 import useTodoState from './hooks/useTodoState';
@@ -9,12 +8,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Grid from '@mui/material/Grid';
 
 function ToDoApp() {
-    const initialTodos = JSON.parse(window.localStorage.getItem("todos") || "[]");
+    const initialTodos = [{ id: 1, task: "Get a Job", completed: false }];
     const {todos, addTodo, removeTodo, toggleTodo, editTodo} = useTodoState(initialTodos)
-
-    useEffect(() => {
-        window.localStorage.setItem("todos", JSON.stringify(todos))
-    }, [todos]);
 
     return (
         <Paper
